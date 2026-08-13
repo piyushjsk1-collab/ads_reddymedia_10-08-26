@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Reddy Media — Performance Marketing Agency</title>
-<meta name="description" content="Scale your business with Reddy Media. Meta Ads, Google PPC, and performance marketing.">
+<title>Reddy Media — Data-Driven Performance Marketing & Growth Agency</title>
+<meta name="description" content="Scale your business with Reddy Media. High-ROI Meta Ads, Google PPC campaigns, SEO, and performance-focused landing pages.">
 <meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,7 +121,7 @@ nav {
   box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
 }
 
-/* HERO SECTION - ONLY CLICKABLE IMAGE */
+/* HERO SECTION */
 .hero-split {
   padding: 120px 6% 50px;
   display: flex;
@@ -569,7 +569,7 @@ footer {
 .float-wa:hover { transform: scale(1.08); }
 
 /* ========================================================
-   POPUP MODAL OVERLAY (ONLY IMAGE - NO TEXT)
+   POPUP MODAL OVERLAY (PURE CSS TEXT POPUP - NO IMAGE)
    ======================================================== */
 .modal-overlay {
   position: fixed;
@@ -597,15 +597,18 @@ footer {
 
 .modal-banner-card {
   width: 100%;
-  max-width: 480px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  max-width: 450px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  overflow: visible; /* FOR FLOATING BADGE */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(37, 99, 235, 0.3);
   position: relative;
   transform: scale(0.9);
   transition: transform 0.3s ease;
   cursor: pointer;
-  line-height: 0; /* REMOVES EXTRA IMAGE SPACING */
+  padding: 38px 24px 24px;
+  text-align: center;
 }
 
 .modal-overlay.active .modal-banner-card {
@@ -614,11 +617,11 @@ footer {
 
 .modal-close-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
   width: 32px;
   height: 32px;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border-radius: 50%;
   display: flex;
@@ -626,10 +629,9 @@ footer {
   justify-content: center;
   font-size: 16px;
   cursor: pointer;
-  z-index: 20;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: 0.2s;
-  line-height: 1;
 }
 
 .modal-close-btn:hover {
@@ -637,11 +639,106 @@ footer {
   color: #fff;
 }
 
-.modal-banner-card img {
+/* HIGHLIGHTED 5% CIRCLE BADGE WITH PULSE ANIMATION */
+.badge-circle-5 {
+  position: absolute;
+  top: -24px;
+  left: 20px;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444, #f59e0b);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.5);
+  border: 3px solid #111827;
+  animation: pulseGlow 2s infinite ease-in-out;
+  z-index: 15;
+}
+
+.badge-circle-5 .percent-num {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.badge-circle-5 .percent-txt {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+  50% { transform: scale(1.08); box-shadow: 0 0 0 12px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.popup-icon-badge {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+.banner-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.banner-title span {
+  color: var(--accent-cyan);
+}
+
+.banner-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.popup-wa-btn {
+  background: #25D366;
+  color: #ffffff;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+  transition: 0.2s;
+}
+
+.popup-wa-btn:hover {
+  background: #20ba57;
+  transform: translateY(-2px);
+}
+
+.banner-subtext {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 12px;
 }
 
 /* MEDIA QUERIES */
@@ -686,7 +783,24 @@ footer {
 <div class="modal-overlay" id="autoModal">
   <div class="modal-banner-card" id="modalCard">
     <div class="modal-close-btn" id="modalCloseBtn" title="Close Banner">✕</div>
-    <img src="image.jpeg" alt="Reddy Media Popup Banner">
+
+    <div class="badge-circle-5">
+      <span class="percent-num">5%</span>
+      <span class="percent-txt">OFF</span>
+    </div>
+
+    <div class="popup-icon-badge">
+      <i class="fa-solid fa-chart-line"></i>
+    </div>
+
+    <h2 class="banner-title">Get 5% discount on first order with <span>Reddy Media</span></h2>
+    <p class="banner-desc">Double your Leads with Custom Meta & Google Ads Campaign Setup!</p>
+
+    <a href="#" data-wa class="popup-wa-btn" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp Now
+    </a>
+
+    <p class="banner-subtext">Clicking anywhere on this banner opens direct WhatsApp support</p>
   </div>
 </div>
 
@@ -980,7 +1094,7 @@ footer {
     }, 200);
   });
 
-  // Click inside Modal Image -> Open WhatsApp
+  // Click inside Modal Card -> Open WhatsApp
   modalCard.addEventListener("click", function(e) {
     if (!e.target.closest("#modalCloseBtn")) {
       window.open(whatsappUrl, "_blank");
@@ -993,7 +1107,7 @@ footer {
     autoModal.classList.remove("active");
   });
 
-  // Close Modal on Overlay Click (Outside Image)
+  // Close Modal on Overlay Click (Outside Card)
   autoModal.addEventListener("click", function(e) {
     if (e.target === autoModal) {
       autoModal.classList.remove("active");
